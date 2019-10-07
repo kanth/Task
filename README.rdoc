@@ -1,0 +1,23 @@
+= Forum
+Discussion Forum
+= Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+= Prerequisites
+
+ Ruby - 2.5.5
+ Rails - 4.2.11
+ Mysql - Ver 14.14 Distrib 5.7.23
+
+= Installing
+
+Go to Application and run the below commands
+
+* bundle install
+* rake db:drop && rake db:create && rake db:migrate && rake db:seed
+* rails s
+
+Go to http://localhost:3000  and login with anyone of the users 
+* email: test1@test.com, test2@test.com, test3@test.com
+* password: test123

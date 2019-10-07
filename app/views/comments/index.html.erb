@@ -1,0 +1,17 @@
+
+<h1><%= @post.title%></h1>
+<ul class="list-group list-group-flush">
+<% @comments.each do |comment| %>
+  <% ancestors = comment.get_ancestors %>
+  <li class="list-group-item"><% ancestors.each do |a| %>
+    <% indent = "&nbsp;" * 3 * a[0]%>
+    <%= indent.html_safe %>
+     <%= a[1].body%> - <i>by <%= a[1].user.name %> </i><%= link_to 'Reply', new_post_comment_path(@post, parent_id: a[1])%><br/>
+  <% end %>
+  </li>
+<% end %>
+</ul>
+
+<br>
+<%= link_to 'New comment', new_post_comment_path(@post), class: 'btn btn-info' %>
+<%= link_to 'Back', posts_path, class: 'btn btn-info' %>
